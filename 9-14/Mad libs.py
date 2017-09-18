@@ -8,7 +8,7 @@ def filereplace(numb, pos):
     return  stringedit.replace(numb, numb9)
 
 
-stringedit = filereplace(9, 'Proper noun:')
+stringedit = filereplace(9, 'Name or nickname:')
 stringedit = filereplace(11, 'Noun:')
 stringedit = filereplace(12, 'Exclamation:')
 stringedit = filereplace(13, 'Past tense verb:')

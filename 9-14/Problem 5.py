@@ -1,11 +1,9 @@
+#Zak9-14
 import turtle
-
 t = turtle.Turtle()
 wn = turtle.Screen()
 wn.setworldcoordinates(-500, -500, 500, 500)
-
 file = open("mystery.txt", "r")
-
 for aline in file:
     items = aline.split()
     if items[0] == "UP":
