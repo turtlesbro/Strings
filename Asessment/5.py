@@ -5,7 +5,7 @@ def encrypt_6(message, dict):
             newsent.append(dict[letter])
         else:
             newsent.append(letter)
-    print(" ".join(newsent))
+    print("".join(newsent))
 dict = {}
 dict['z'] = 't'
 dict['y'] = 's'
@@ -37,5 +37,5 @@ dict['a'] = 'u'
 
 
 
-message = str(input("secret code here"))
+message = str(input("secret code here:"))
 encrypt_6(message, dict)
