@@ -36,6 +36,7 @@ class Point:
          y2 = p2.getY()
          x2 = p2.getX()
          rise = y1 - y2
+
          run = x1 - x2
          #run/run-x1
          b = y1 - x1*y1
@@ -105,7 +106,13 @@ class Point:
                          h = -100
          print((x-h)**2+(y-t)**2, '=', r**2)
          return "(x-h)**2+(y-t)**2, '=', r**2"
-
+    def distanceformula(self, p2):
+        y1 = self.getY()
+        x1 = self.getX()
+        y2 = p2.getY()
+        x2 = p2.getX()
+        d = math.sqrt((x2-x1)**2+(y2-y1)**2)
+        return d
 
     def circle(self, p2, p3):
         line1 = self.linequation(p2)
@@ -120,10 +127,32 @@ class Point:
         yint1 = midpoint1.getY() - invline1* midpoint1.getX()
         yint2 = midpoint2.getY() - invline2* midpoint2.getX()
         yint3 = midpoint3.getY() - invline3* midpoint3.getX()
-        if yint1 == yint2:
-            if yint1 == yint3:
-p = Point(2, 0)
+        x = -10
+        ans1 = invline1*x+yint1
+        ans2 = invline2*x+yint2
+        ans3 = invline3*x+yint3
+        if ans1 == ans2 or ans2 == ans3 or ans1 == ans3:
+            y = ans1
+            l = Point(x, y)
+            print('midpoint:', l, 'radius:', self.distanceFromOrigin)
+        else:
+             x = x+.1
+    def v2circle(self, p2, p3):
+        a = self.distanceformula(p2)
+        b = self.distanceformula(p3)
+        c = p3.distanceformula(p2)
+        prod = a*b*c
+        line1 = self.dist(p2)
+
+
+        height = p3.distanceformula(line1)
+        bottom = a*height*2
+        radius = prod/bottom
+        return radius
+
+p = Point(math.sqrt(2), math.sqrt(2))
 q = Point(0, 2)
-j = Point(-2, 0)
-p = p.circle(j, q)
+j = Point(math.sqrt(3), math.sqrt(1))
+p = p.v2circle(j, q)
 print(p)
+#Product~of~the~triangle~side~lengths/The~area~of~the~triangle~multiplied~by~4
