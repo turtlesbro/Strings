@@ -13,11 +13,11 @@ class Point:
 
     def checkpoints(self, b, c):
         if self.y - b.y == 0:
-            berror = True
-            return berror
-        if self.y - c.y == 0:
-            cerror = True
-            return cerror
+            n = 6
+            return n
+        elif self.y - c.y == 0:
+            n = 7
+            return n
         else:
             cerror = False
             return cerror
@@ -118,23 +118,22 @@ class Segment:
 
 
 def main():
-    berror = False
-    cerror = False
+    n = 0
 
-    p1 = Point(1, 4)
-    p2 = Point(4, 1)
-    p3 = Point(-2, 1)
+    p1 = Point(1, 1)
+    p2 = Point(-1, 1)
+    p3 = Point(2, 0)
 
-    p1.checkpoints(p2, p3)
-    if berror == True:
+    n = p1.checkpoints(p2, p3)
+    if n == 6:
         s1 = Segment(p1, p3)
         s2 = Segment(p3, p2)
-    elif cerror == True:
-        s1 = Segment(p1, p2)
+    elif n == 7:
+        s1 = Segment(p2, p1)
         s2 = Segment(p3, p2)
     else:
         s1 = Segment(p1, p2)
-        s2 = Segment(p3, p1)
+        s2 = Segment(p1, p3)
     lp1 = s1.bisect()
     lp2 = s2.bisect()
 

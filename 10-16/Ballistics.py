@@ -22,7 +22,7 @@ class Projectile:
         return self.ypos
 
 def getInputs():
-    angle = eval(input("Enter the launch angle(in degrees(90 degrees is suicidal)): \n"))
+    angle = eval(input("Enter the launch angle(in degrees(90 degrees is suicidal please don't try)): \n"))
     velocity = eval(input("Enter the velocity in meters/second that the projectile of the weapon traveled): \n"))
     height0 = eval(input("Enter the initial height that the barrel was from the ground when the cannon's ballistic round was fired(in meters) \n"))
     time = eval(input("Enter time interval between calculations: \n"))
