@@ -1,0 +1,3 @@
+Tuples are immutable lists. They have multiple terms. They are easy to copy.
+strings are non-editable. They are one term, but can contain lots of text
+lists are multiple terms in a row. You can have strings or lists inside lists. They are editable
