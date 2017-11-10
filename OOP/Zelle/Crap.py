@@ -1,16 +1,17 @@
 from buttonz import *
 from graphics import *
-from diedicen import *
+from Diepart2 import *
 from random import *
 
 def main():
-    win = GraphWin("dice roller")
+    win = GraphWin("Craps")
     win.setCoords(0,0,10,10)
     win.setBackground("green2")
     die1 = DieView(win, Point(3, 7), 2)
     die2 = DieView(win, Point(7, 7), 2)
     rollButton = Button(win, Point(5, 4.5), 1.5, "Roll Dice")
     rollButton.activate()
+
     quitButton = Button(win, Point(5, 1), 1, "Quit")
 
     pt = win.getMouse()
